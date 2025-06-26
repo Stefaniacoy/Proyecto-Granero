@@ -10,8 +10,14 @@ function obtenerMap(nombre) {
         return map;
 }
 
-// Devolver la lista de categorias almacenadas 
+// Devolver la lista de categorias almacenadas en el localStorage
 function  obtenerCategorias() {
     const map = obtenerMap("categorias");
     return map.values();
+}
+
+// Devolver la lista de banners almacenadas en localStorage
+function  obtenerBanners() {
+    const map = obtenerMap("banners");
+    return map.values();
 }
