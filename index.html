@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Granero La Rebaja</title>
 
-     <link rel="apple-touch-icon" href="img/apple-icon.png">
+    <link rel="apple-touch-icon" href="img/apple-icon.png">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -16,12 +16,45 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="css/fontawesome.min.css">
 
+    <script src="db-simulacion/datos.js"></script>
+    <script src="db-simulacion/funciones.js"></script>
+
 </head>
 
 <body>
 
    <div id="header"></div>
-   <p>Cuerpo de la pagina</p>
+
+    <!-- Start Categories of The Month -->
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Categorias de Productos</h1>
+                <p>
+                    Granero La Rebaja es una empresa dedicada a la comercialización de productos no perecederos como granos y abarrotes.
+                </p>
+            </div>
+        </div>
+        <div class="row" id="categorias"> 
+        </div>
+    </section>
+
+    <script>
+        const categorias = obtenerCategorias();
+        categorias.forEach(cat => {
+            const tarjeta = document.createElement('div');
+            tarjeta.className = 'col-12 col-md-4 p-5 mt-3';
+            tarjeta.innerHTML = `
+                <a href="#"><img src="${cat.imagen}" class="rounded img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">${cat.nombre}</h5>
+                <p class="text-center">${cat.descripcion}</p>
+                <p class="text-center"><a class="btn btn-success" href="#">Go Shop</a></p>
+            `;
+            document.getElementById('categorias').appendChild(tarjeta);
+        });
+    </script>
+    <!-- End Categories of The Month -->
+
    <div id="footer"></div>
 
    <!-- Start Script -->
