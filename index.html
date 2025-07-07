@@ -30,7 +30,7 @@
     <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
         </ol>
-        <div style="height: 300px;" class="carousel-inner">
+        <div style="height: 380px;" class="carousel-inner">
         </div>
         <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
             <i class="fas fa-chevron-left"></i>
@@ -51,7 +51,7 @@
             item.innerHTML = `
                 <div class="container">
                     <div class="row p-5">
-                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last" style="width: 300px;">
                             <img class="img-fluid" src="${banner.imagen}" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
@@ -59,7 +59,6 @@
                                 <h1 class="h1 text-success"><b>${banner.titulo}</b></h1>
                                 <h3 class="h2">${banner.subtitulo}</h3>
                                 <p>${banner.descripcion}</p>
-                                <p> class="text-center">
                                     <a class="btn btn-success" href="">Ver Más</a>
                                 </p>
                             </div>
@@ -105,7 +104,7 @@
                 <a href="#"><img src="${cat.imagen}" class="rounded img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3">${cat.nombre}</h5>
                 <p class="text-center">${cat.descripcion}</p>
-                <p class="text-center"><a class="btn btn-success" href="#">Go Shop</a></p>
+                <p class="text-center"><a class="btn btn-success" href="productos.html?categoria=${cat.codigo}">Ver Productos</a></p>
             `;
             document.getElementById('categorias').appendChild(tarjeta);
         });
